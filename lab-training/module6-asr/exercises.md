@@ -157,19 +157,20 @@ def snr_asr_experiment(model, clean_path, noise_path, snr_levels):
 
 ## 练习4：端到端Pipeline整合（第2次课配套，从零式）
 
-**目标**：独立完成所有模块的串联。
+**目标**：独立完成所有模块的串联，包括GET声码器步骤。
 
 **任务**：不使用框架代码，从零实现以下Pipeline并评估：
 
 ```
-带噪语音 → DeepFilterNet增强 → ASR识别 → 计算CER
+带噪语音 → DeepFilterNet增强 → ACE编码 → GET声码器还原 → ASR识别 → 计算CER
 ```
 
 **要求**：
 1. 自己写代码加载各模块
-2. 自己处理采样率转换（DeepFilterNet输出48kHz，Whisper需要16kHz）
-3. 自己设计对比实验（至少3种配置）
-4. 自己画图展示结果
+2. 自己处理采样率转换（DeepFilterNet输出48kHz → ACE需要16kHz → 声码器输出16kHz）
+3. 正确调用GET声码器（需要ACE输出的electrodogram和map_p）
+4. 自己设计对比实验（至少4种配置）
+5. 自己画图展示结果
 
 **评估矩阵**：
 
@@ -177,6 +178,7 @@ def snr_asr_experiment(model, clean_path, noise_path, snr_levels):
 |-------------|-----------|-----------|-----------|---------|
 | 带噪→ASR | | | | |
 | 增强→ASR | | | | |
+| 增强→ACE→声码器→ASR | | | | |
 | 干净→ASR | | | | |
 
 **预期成果**：

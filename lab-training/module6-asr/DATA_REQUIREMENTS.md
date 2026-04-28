@@ -99,19 +99,64 @@ cp -r ../module5-deepfilternet/enhanced/ ./test_audio/enhanced/
 
 ---
 
-## 四、Pipeline整合需求
+## 四、GET声码器
+
+第2次课的Pipeline整合需要将ACE电极图还原为可听音频，才能送入ASR评估。
+
+### GET声码器位置
+
+GET声码器的代码位于 `module4-deepace/ACE/` 目录：
+
+| 文件 | 说明 |
+|------|------|
+| `get_voc.py` | GET声码器核心实现 |
+| `voc_main.py` | 声码器演示脚本 |
+| `ace_strategy.py` | ACE策略入口（声码器需要其输出的电极图和MAP参数） |
+
+### GET声码器参数
+
+| 参数 | 默认值 | 说明 |
+|------|--------|------|
+| vocoder_carrier | 1 | 1=GET(正弦载波), 2=GEN(噪声载波) |
+| conv_type | 1 | 1=最大值叠加, 2=累加 |
+| carrier_freq_shift | 0 | 载波频率偏移 (Hz) |
+| get_fs | 16000 | 输出采样率 |
+| N_BAND | 22 | 通道数 |
+| N_MAXIMA | 8 | 每帧选取的最大幅度通道数 |
+
+### 使用示例
+
+```python
+import sys
+sys.path.insert(0, '../module4-deepace/ACE/')
+from ace_strategy import ace_strategy
+from get_voc import get_voc
+
+# Step 1: ACE编码
+q, p = ace_strategy(audio, 16000, n_band=22, n_maxima=8)
+
+# Step 2: GET声码器还原
+GET_DUR = (3 + (22 - np.arange(1, 23))).astype(float)
+vocoded, mod_bands = get_voc(q, p, 1, GET_DUR, 1, 0, 16000)
+# vocoded 即为还原后的音频，可送入ASR
+```
+
+---
+
+## 五、Pipeline整合需求
 
 第2次课需要整合前面所有模块的输出。确保以下模块可运行：
 
 | 模块 | 需要的输出 | 状态确认 |
 |------|-----------|---------|
 | 模块5 DeepFilterNet | 增强后的音频文件 | `enhanced/` 目录 |
-| 模块4 DeepACE | ACE通道选择结果 | 电极图数据 |
+| 模块4 ACE策略 | 电极图 + MAP参数 | `ace_strategy` 可运行 |
+| 模块4 GET声码器 | 还原音频 | `get_voc` 可运行 |
 | 模块6 ASR | 识别文本 + WER/CER | 本模块 |
 
 ---
 
-## 五、注意事项
+## 六、注意事项
 
 - **中文识别**：Whisper对中文的识别效果取决于模型大小。tiny/base对中文效果一般，建议使用small或以上
 - **GPU要求**：Whisper推理推荐GPU。CPU也可运行但较慢（small模型约3x实时）
