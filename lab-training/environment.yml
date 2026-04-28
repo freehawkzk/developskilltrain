@@ -1,0 +1,32 @@
+name: lab-training
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - scikit-learn
+  - jupyterlab
+  - notebook
+  - ipywidgets
+  - tqdm
+  - pytorch>=2.0
+  - torchaudio>=2.0
+  - cudatoolkit=11.8
+  - librosa
+  - soundfile
+  - sox
+  - tensorboard
+  - ffmpeg
+  - pip
+  - pip:
+    - pesq
+    - pystoi
+    - mir-eval
+    - openai-whisper
+    - deepfilternet
+    - wandb
