@@ -1,1 +1,9 @@
 ESC-50/
+speech_commands/
+__pycache__/
+*.pyc
+data/
+*.pth
+*.ckpt
+.DeepFilterNet*
+ DeepFilterNet-main/
