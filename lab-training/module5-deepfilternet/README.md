@@ -2,11 +2,18 @@
 
 ## 课程安排
 
-| 课次 | 主题 | 课时 | 必修 |
-|------|------|------|------|
-| 第1次 | 语音增强基础 + DeepFilterNet论文精读 | 2.5h | 是 |
-| 第2次 | DeepFilterNet代码解析与运行 | 2.5h | 是 |
-| 第3次 | DeepFilterNet修改实验 + 与CI结合 | 2.5h | 可选 |
+**课时：一个上午，3小时**
+
+| 时间 | 内容 | Notebook |
+|------|------|----------|
+| 0:00-0:45 | 语音增强基础、指标与 DeepFilterNet 论文精读 | [01-se-enhancement-basics](notebooks/01-se-enhancement-basics.ipynb) |
+| 0:45-1:25 | ERB 域、两阶段架构与 CI/助听器关联 | [01-se-enhancement-basics](notebooks/01-se-enhancement-basics.ipynb) |
+| 1:25-1:35 | 休息 | — |
+| 1:35-2:15 | 代码结构、数据流与预训练模型推理 | [02-code-analysis](notebooks/02-code-analysis.ipynb) |
+| 2:15-2:40 | 指标评估与 Enhance-then-Encode 整合 | [02-code-analysis](notebooks/02-code-analysis.ipynb)、[03-ci-integration](notebooks/03-ci-integration.ipynb) |
+| 2:40-3:00 | ERB 修改、延迟与 CI 部署讨论 | [03-ci-integration](notebooks/03-ci-integration.ipynb) |
+
+> 以下三个内容单元均在同一上午完成；其原时间表仅保留主题和活动清单，不再表示独立排课。
 
 ## 学习目标
 
@@ -23,7 +30,7 @@
 
 ---
 
-## 第1次课：语音增强基础 + DeepFilterNet论文精读（2.5小时）
+## 上午前段：语音增强基础 + DeepFilterNet论文精读
 
 ### 教学目标
 
@@ -52,11 +59,11 @@ DeepFilterNet中选择ERB（Equivalent Rectangular Bandwidth）域而非普通�
 ### 课前准备
 
 - DeepFilterNet论文PDF提前分发
-- 预习文档：`预习-第1次课.md`
+- 预习文档：`预习-第1次课.md`（上午前段）
 
 ---
 
-## 第2次课：DeepFilterNet代码解析与运行（2.5小时）
+## 上午中段：DeepFilterNet代码解析与运行
 
 ### 教学目标
 
@@ -86,11 +93,11 @@ DeepFilterNet中选择ERB（Equivalent Rectangular Bandwidth）域而非普通�
 
 - 安装DeepFilterNet（`pip install deep-filter`）
 - 解压预训练模型（`models/DeepFilterNet3.zip`）
-- 预习文档：`预习-第2次课.md`
+- 预习文档：`预习-第2次课.md`（上午中段）
 
 ---
 
-## 第3次课（可选）：DeepFilterNet修改实验 + 与CI结合（2.5小时）
+## 上午后段：DeepFilterNet修改实验 + 与CI结合
 
 ### 教学目标
 
@@ -116,7 +123,7 @@ DeepFilterNet中选择ERB（Equivalent Rectangular Bandwidth）域而非普通�
 
 - 确认DeepFilterNet推理能正常运行
 - 运行 `scripts/prepare_test_samples.py` 生成测试样本
-- 预习文档：`预习-第3次课.md`
+- 预习文档：`预习-第3次课.md`（上午后段）
 
 ---
 
@@ -134,9 +141,9 @@ module5-deepfilternet/
 ├── README.md                          # 本文件
 ├── DATA_REQUIREMENTS.md               # 数据集需求说明
 ├── exercises.md                       # 编程练习
-├── 预习-第1次课.md                     # 课前预习材料
-├── 预习-第2次课.md                     # 课前预习材料
-├── 预习-第3次课.md                     # 课前预习材料
+├── 预习-第1次课.md                     # 上午前段预习材料
+├── 预习-第2次课.md                     # 上午中段预习材料
+├── 预习-第3次课.md                     # 上午后段预习材料
 ├── notebooks/
 │   ├── 01-se-enhancement-basics.ipynb  # 语音增强基础 + 论文精读
 │   ├── 02-code-analysis.ipynb          # 代码解析与运行

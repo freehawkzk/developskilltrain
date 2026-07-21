@@ -1,6 +1,6 @@
 # 模块0 课后练习
 
-## 第1次课课后练习
+## 上午前段配套练习
 
 ### 基础（必做）
 
@@ -74,7 +74,7 @@ def plot_waveform(t, wave, title='Waveform'):
 
 ---
 
-## 第2次课课后练习
+## 上午中段配套练习
 
 ### 基础（必做）
 
@@ -95,7 +95,7 @@ def plot_waveform(t, wave, title='Waveform'):
 
 ### 进阶（选做）
 
-用面向对象的方式重写第1次课的练习：
+用面向对象的方式重写上午前段的练习：
 - `Signal` 是基类
 - `SineWave` 继承 `Signal`
 - `CompositeWave` 继承 `Signal`（可以包含多个 `SineWave`）
@@ -103,7 +103,7 @@ def plot_waveform(t, wave, title='Waveform'):
 
 ---
 
-## 第3次课课后练习
+## 上午后段配套练习
 
 ### 基础（必做）
 

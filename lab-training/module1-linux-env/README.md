@@ -2,10 +2,13 @@
 
 ## 课程安排
 
-| 课次 | 主题 | 课时 |
-|------|------|------|
-| 第1次 | Linux生存指南 | 2.5h |
-| 第2次 | 深度学习环境搭建 | 2.5h |
+**课时：一个上午，3小时**
+
+| 时间 | 内容单元 | 配套 Notebook |
+|------|----------|---------------|
+| 0:00-1:00 | Linux 生存指南：文件操作、SSH、tmux 与远程开发 | `01-linux-survival.ipynb` |
+| 1:00-2:00 | 深度学习环境：Conda、PyTorch、CUDA 与 Docker | `02-environment-setup.ipynb` |
+| 2:00-3:00 | Jupyter 远程访问、环境验证与问题排查 | `02-environment-setup.ipynb` |
 
 ## 学习目标
 

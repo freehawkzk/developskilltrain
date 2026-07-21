@@ -2,10 +2,18 @@
 
 ## 课程安排
 
-| 课次 | 主题 | 课时 | 必修 |
-|------|------|------|------|
-| 第1次 | ASR原理与主流方法 | 2.5h | 是 |
-| 第2次 | ASR实战 + 端到端Pipeline整合 | 2.5h | 是 |
+**课时：一个上午，3小时**
+
+| 时间 | 内容 | Notebook |
+|------|------|----------|
+| 0:00-0:45 | ASR 问题、WER/CER、CTC 与 Attention/Transformer | [01-asr-principles](notebooks/01-asr-principles.ipynb) |
+| 0:45-1:25 | Whisper 架构、使用方式与 CI 评估场景 | [01-asr-principles](notebooks/01-asr-principles.ipynb) |
+| 1:25-1:35 | 休息 | — |
+| 1:35-2:10 | Whisper 推理与纯净/带噪语音识别比较 | [02-whisper-pipeline](notebooks/02-whisper-pipeline.ipynb) |
+| 2:10-2:40 | GET 声码器与端到端 Pipeline 整合 | [02-whisper-pipeline](notebooks/02-whisper-pipeline.ipynb) |
+| 2:40-3:00 | 结果讨论、课程总结与后续任务 | [02-whisper-pipeline](notebooks/02-whisper-pipeline.ipynb) |
+
+> 以下两个内容单元均在同一上午完成；其原时间表仅保留主题和活动清单，不再表示独立排课。
 
 ## 学习目标
 
@@ -22,7 +30,7 @@
 
 ---
 
-## 第1次课：ASR原理与主流方法（2.5小时）
+## 上午前段：ASR原理与主流方法
 
 ### 教学目标
 
@@ -50,12 +58,12 @@ ASR这个主题很宽，对非CS背景的学生来说容易变成"信息过载"�
 
 ### 课前准备
 
-- 预习文档：`预习-第1次课.md`
+- 预习文档：`预习-第1次课.md`（上午前段）
 - 安装Whisper：`pip install openai-whisper`
 
 ---
 
-## 第2次课：ASR实战 + 端到端Pipeline整合（2.5小时）
+## 上午中后段：ASR实战 + 端到端Pipeline整合
 
 ### 教学目标
 
@@ -85,7 +93,7 @@ ASR这个主题很宽，对非CS背景的学生来说容易变成"信息过载"�
 
 - 确认Whisper已安装并能正常推理
 - 准备好前续模块的输出结果
-- 预习文档：`预习-第2次课.md`
+- 预习文档：`预习-第2次课.md`（上午中后段）
 
 ---
 
@@ -103,8 +111,8 @@ module6-asr/
 ├── README.md                    # 本文件
 ├── DATA_REQUIREMENTS.md         # 数据集需求说明
 ├── exercises.md                 # 编程练习
-├── 预习-第1次课.md               # 课前预习材料
-├── 预习-第2次课.md               # 课前预习材料
+├── 预习-第1次课.md               # 上午前段预习材料
+├── 预习-第2次课.md               # 上午中后段预习材料
 ├── notebooks/
 │   ├── 01-asr-principles.ipynb  # ASR原理与主流方法
 │   └── 02-whisper-pipeline.ipynb # ASR实战+Pipeline整合

@@ -1,6 +1,6 @@
 # 模块5 编程练习
 
-## 练习1：实现简化版谱减法（第1次课配套）
+## 练习1：实现简化版谱减法（上午前段配套）
 
 **目标**：理解谱减法的原理和局限。
 
@@ -54,7 +54,7 @@ def spectral_subtraction(noisy, sr, noise_frames=5):
 
 ---
 
-## 练习2：实现SI-SDR计算函数（第1次课配套）
+## 练习2：实现SI-SDR计算函数（上午前段配套）
 
 **目标**：深入理解SI-SDR指标。
 
@@ -113,7 +113,7 @@ assert compute_si_sdr(noise, ref) < 0  # 应该是负值
 
 ---
 
-## 练习3：修改ERB频带数量（第3次课配套）
+## 练习3：修改ERB频带数量（上午后段配套）
 
 **目标**：理解ERB频带数对模型性能和CI适配的影响。
 
@@ -148,7 +148,7 @@ cp DeepFilterNet-main/DeepFilterNet/df/config.py config_backup.py
 
 ---
 
-## 练习4：实现Enhance-then-Encode流水线（第3次课配套）
+## 练习4：实现Enhance-then-Encode流水线（上午后段配套）
 
 **目标**：将语音增强与ACE编码串联。
 
@@ -209,7 +209,7 @@ def enhance_then_encode(noisy_path, config=None):
 
 ---
 
-## 练习5：SNR扫描评估（第3次课配套）
+## 练习5：SNR扫描评估（上午后段配套）
 
 **目标**：系统评估DeepFilterNet在不同信噪比下的表现。
 

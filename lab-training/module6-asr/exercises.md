@@ -1,6 +1,6 @@
 # 模块6 编程练习
 
-## 练习1：实现CER计算函数（第1次课配套）
+## 练习1：实现CER计算函数（上午前段配套）
 
 **目标**：深入理解字符错误率的计算方法。
 
@@ -47,7 +47,7 @@ assert compute_cer("你好", "你好世界") == 1.0       # 2个插入/2个字
 
 ---
 
-## 练习2：Whisper识别与评估（第2次课配套）
+## 练习2：Whisper识别与评估（上午中后段配套）
 
 **目标**：学会使用Whisper进行语音识别，并评估识别质量。
 
@@ -101,7 +101,7 @@ def evaluate_asr(model, audio_path, reference_text):
 
 ---
 
-## 练习3：SNR-ASR曲线绘制（第2次课配套）
+## 练习3：SNR-ASR曲线绘制（上午中后段配套）
 
 **目标**：系统评估噪声对ASR的影响。
 
@@ -155,7 +155,7 @@ def snr_asr_experiment(model, clean_path, noise_path, snr_levels):
 
 ---
 
-## 练习4：端到端Pipeline整合（第2次课配套，从零式）
+## 练习4：端到端Pipeline整合（上午中后段配套，从零式）
 
 **目标**：独立完成所有模块的串联，包括GET声码器步骤。
 

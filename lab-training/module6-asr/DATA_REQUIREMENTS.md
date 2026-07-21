@@ -103,7 +103,7 @@ cp -r ../module5-deepfilternet/enhanced/ ./test_audio/enhanced/
 
 ## 四、GET声码器
 
-第2次课的Pipeline整合需要将ACE电极图还原为可听音频，才能送入ASR评估。
+上午中后段的 Pipeline 整合需要将 ACE 电极图还原为可听音频，才能送入 ASR 评估。
 
 ### GET声码器位置
 
@@ -147,7 +147,7 @@ vocoded, mod_bands = get_voc(q, p, 1, GET_DUR, 1, 0, 16000)
 
 ## 五、Pipeline整合需求
 
-第2次课需要整合前面所有模块的输出。确保以下模块可运行：
+上午中后段需要整合前面所有模块的输出。确保以下模块可运行：
 
 | 模块 | 需要的输出 | 状态确认 |
 |------|-----------|---------|
