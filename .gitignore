@@ -4,6 +4,12 @@ __pycache__/
 *.pyc
 data/
 *.pth
+*.pt
 *.ckpt
+*.ckpt.best
 .DeepFilterNet*
- DeepFilterNet-main/
+# 解压后的 DeepFilterNet 预训练模型目录（zip 已在仓库，本地 unzip 即可）
+**/DeepFilterNet-main/models/DeepFilterNet*/
+# Whisper 预训练权重（已下载到 module6-asr/pretrained/，但不入仓库——按 README 指引下载）
+module6-asr/pretrained/*.pt
+enhance.log

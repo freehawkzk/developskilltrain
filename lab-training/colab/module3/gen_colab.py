@@ -2,8 +2,9 @@
 """Generate Colab versions of Module 3 notebooks"""
 import json, os
 
-COLAB_DIR = "/sessions/sharp-relaxed-bell/mnt/23-developskilltrain/lab-training/colab/module3"
-NOTEBOOK_DIR = "/sessions/sharp-relaxed-bell/mnt/23-developskilltrain/lab-training/module3-audio-classification/notebooks"
+COLAB_DIR = os.path.dirname(os.path.abspath(__file__))
+NOTEBOOK_DIR = os.path.join(os.path.dirname(os.path.dirname(COLAB_DIR)),
+                            "module3-audio-classification", "notebooks")
 
 def make_install_cell():
     return {
@@ -64,8 +65,20 @@ for name in ["01-audio-features.ipynb", "02-crnn-classifier.ipynb", "03-ci-tasks
     if not os.path.exists(src):
         print(f"Skip {name} (source not found)")
         continue
+    # Student version
     nb = convert_to_colab(src)
     dst = os.path.join(COLAB_DIR, name)
     with open(dst, 'w', encoding='utf-8') as f:
         json.dump(nb, f, ensure_ascii=False, indent=1)
-    print(f"Generated: {dst}")
+    print(f"Generated (student): {dst}")
+
+    # Solution version (if source -solution.ipynb exists)
+    stem, ext = os.path.splitext(name)
+    sol_src = os.path.join(NOTEBOOK_DIR, f"{stem}-solution{ext}")
+    if os.path.exists(sol_src):
+        sol_nb = convert_to_colab(sol_src)
+        sol_dst = os.path.join(COLAB_DIR, f"{stem}-solution{ext}")
+        with open(sol_dst, 'w', encoding='utf-8') as f:
+            json.dump(sol_nb, f, ensure_ascii=False, indent=1)
+        print(f"Generated (solution): {sol_dst}")
+

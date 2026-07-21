@@ -71,11 +71,22 @@ def main():
             print(f"跳过 {name}（源文件不存在）")
             continue
 
+        # Student version (TODO blocks replaced with raise NotImplementedError)
         nb = convert_to_colab(src)
         dst = os.path.join(COLAB_DIR, name)
         with open(dst, 'w', encoding='utf-8') as f:
             json.dump(nb, f, ensure_ascii=False, indent=1)
-        print(f"已生成: {dst}")
+        print(f"已生成 (student): {dst}")
+
+        # Solution version (if source -solution.ipynb exists)
+        stem, ext = os.path.splitext(name)
+        sol_src = os.path.join(NOTEBOOK_DIR, f"{stem}-solution{ext}")
+        if os.path.exists(sol_src):
+            sol_nb = convert_to_colab(sol_src)
+            sol_dst = os.path.join(COLAB_DIR, f"{stem}-solution{ext}")
+            with open(sol_dst, 'w', encoding='utf-8') as f:
+                json.dump(sol_nb, f, ensure_ascii=False, indent=1)
+            print(f"已生成 (solution): {sol_dst}")
 
 if __name__ == "__main__":
     main()

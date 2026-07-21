@@ -15,7 +15,7 @@ def make_install_cell():
             "!pip install -q numpy scipy matplotlib\n",
             "!pip install -q torch torchaudio --index-url https://download.pytorch.org/whl/cu118\n",
             "!pip install -q soundfile librosa\n",
-            "!pip install -q deep-filter\n",
+            "!pip install -q deepfilterlib\n",
             "!pip install -q pesq pystoi\n",
             "print('环境配置完成！')\n",
             "\n",

@@ -41,7 +41,7 @@ RUN pip install --no-cache-dir \
     pystoi \
     mir-eval \
     openai-whisper \
-    deepfilternet \
+    deepfilterlib \
     wandb
 
 # 配置Jupyter

@@ -28,5 +28,5 @@ dependencies:
     - pystoi
     - mir-eval
     - openai-whisper
-    - deepfilternet
+    - deepfilterlib  # 必需: 提供 libdf (Rust 扩展)，module 5 notebook 加载 DeepFilterNet3 预训练权重需要；vendored 源码 (DeepFilterNet-main/DeepFilterNet/df/) 只含 Python 部分，依赖 libdf 才能运行 init_df/enhance
     - wandb

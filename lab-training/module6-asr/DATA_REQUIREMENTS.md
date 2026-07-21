@@ -80,12 +80,14 @@ cp -r ../module5-deepfilternet/enhanced/ ./test_audio/enhanced/
    pip install faster-whisper
    ```
 
-2. **预下载模型权重**
+2. **预下载模型权重**（仓库已含，通常无需重做）
    ```python
    import whisper
-   model = whisper.load_model("small")  # 首次运行自动下载
+   # 下载到 module6-asr/pretrained/，notebook 默认从此目录加载
+   whisper.load_model("small", download_root="pretrained")
+   whisper.load_model("tiny",  download_root="pretrained")
    ```
-   建议课前预先下载，避免课上等待。
+   仓库已含 `pretrained/small.pt` (~488 MB) 和 `pretrained/tiny.pt` (~75 MB)——除非目录为空，否则不必重新下载。
 
 3. **准备测试音频**
    - 至少准备3段干净中文语音（每段5-10秒）

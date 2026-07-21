@@ -47,6 +47,8 @@ def convert_to_colab(nb_path):
             for line in cell["source"]:
                 line = line.replace("'..', 'test_audio'", "'test_audio'")
                 line = line.replace("'..', '..', 'module5-deepfilternet', 'test_samples'", "'test_samples'")
+                # Colab 没有 module6-asr/pretrained 目录，让 whisper 用默认缓存
+                line = line.replace("os.path.join('..', 'pretrained')", "os.path.join('.', 'pretrained')")
                 new_source.append(line)
             cell["source"] = new_source
     nb["cells"] = [install_cell] + nb["cells"]
